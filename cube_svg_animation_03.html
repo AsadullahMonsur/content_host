@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="cube_svg_animation_03.css">
+</head> 
+
+<body>
+
+<div class="viewer">
+
+  <svg class="cube" viewBox="0 0 10 10">
+
+    <defs>
+        <linearGradient id="top_stroke_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(0, 4, 255);stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="right_stroke_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(43, 255, 0);stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="left_stroke_gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1" />
+          <stop offset="100%" style="stop-color:rgb(255, 0, 0);stop-opacity:1" />
+        </linearGradient>
+
+        <filter id="blue_effect">
+            <feFlood flood-color="rgb(0, 4, 255)" flood-opacity="0.6" in="SourceGraphic" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feGaussianBlur stdDeviation="1" />
+            <feComponentTransfer result="glow1">
+              <feFuncA type="linear" slope="6" intercept="0" />
+            </feComponentTransfer>
+            <feMerge>
+               <feMergeNode in="glow1" />
+               <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          <filter id="green_effect">
+            <feFlood flood-color="rgb(43, 255, 0)" flood-opacity="0.3" in="SourceGraphic" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feGaussianBlur stdDeviation="1" />
+            <feComponentTransfer result="glow1">
+              <feFuncA type="linear" slope="3" intercept="0" />
+            </feComponentTransfer>
+            <feMerge>
+               <feMergeNode in="glow1" />
+               <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          <filter id="red_effect">
+            <feFlood flood-color="rgb(255, 0, 0)" flood-opacity="0.4" in="SourceGraphic" />
+            <feComposite operator="in" in2="SourceGraphic" />
+            <feGaussianBlur stdDeviation="1" />
+            <feComponentTransfer result="glow1">
+              <feFuncA type="linear" slope="4" intercept="0" />
+            </feComponentTransfer>
+            <feMerge>
+               <feMergeNode in="glow1" />
+               <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+
+          <filter id="fi3">
+            <feConvolveMatrix filterRes="100 100" style="color-interpolation-filters:sRGB"
+              order="3" kernelMatrix="0 -1 0   -1 4 -1   0 -1 0" preserveAlpha="true"/>
+          </filter>
+
+          <filter id="fi5">
+            <feColorMatrix values="1 0 0 0 0
+                                   0 1 0 0 0
+                                   0 0 1 0 0
+                                   0 1 0 0 0" style="color-interpolation-filters:sRGB"/>
+          </filter>
+
+    </defs>
+
+    <path id="EH" d="M8,8 l -2,-2" />
+    <path id="GH" d="M2,6 l 4,0" />
+    <path id="AH" d="M6,2 l 0,4" />
+    <path id="BADC" d="M2,2 l 4,0 2,2 -4,0" />
+    <path id="FGBC" d="M4,8 l -2,-2 0,-4 2,2" />
+    <path id="DEFC" d="M8,4 l 0,4 -4,0 0,-4" />
+  </svg>
+ 
+</div>
+    
+</body>
+</html>

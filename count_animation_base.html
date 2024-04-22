@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+html,body{
+  margin:0;
+
+/*
+    --var-pz: var(--var-px);
+    --math-abs: max(var(--var-pz), -1* var(--var-pz));
+  --var-pz-abs: var(--math-abs);
+  --var-floor: calc(var(--var-pz-abs) / var(--var-pu) - 0.5);
+  --math-mod: calc(var(--var-pz-abs) - calc(var(--var-pu) * var(--var-floor)));
+  --var-pv : var(--math-mod);
+  --var-pw: calc(var(--var-pw) * calc(var(--var-pu) - var(--var-pv)) );
+  --var-py: calc(var(--var-pw) * var(--var-pz));
+
+*/
+
+}
+
+
+#counter_container{
+min-height: 100px; 
+display: flex;
+flex-grow: 1;
+flex-direction: row;
+background: black;
+align-items: center;
+justify-content: center;
+
+/*  number animation varibales*/
+
+}
+
+#counter_container:hover  .counter{
+  background: black;
+  color: white;
+  animation: lamda_dance2 1s  1;
+}
+
+#counter_container:hover  .counter::after{
+
+  animation: anims 1s  1 ;
+}
+
+
+.counter{
+  max-width: 50px;
+  min-height: 50px;
+  max-height: 50px;
+  flex-grow: 1;
+  margin: 5px;
+  background: white;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: lamda_dance 1s  1;
+}
+
+.counter_part04{
+animation-delay: .5s;
+}
+
+.counter_part03{
+  animation-delay: 1s;
+}
+
+.counter_part02{
+  animation-delay: 1.5s;
+}
+
+.counter_part01{
+  animation-delay: 2s;
+}
+
+.counter::after {
+  font: 800 40px system-ui;
+  content: counter(count);
+  animation: anim 1s linear 1 ;
+}
+
+.counter_part04::after{
+  --var-pz: 7;
+animation-delay: 0s;
+counter-reset: count var(--var-pz);
+}
+
+.counter_part03::after{
+  --var-pz: 4;
+  animation-delay: .25s;
+  counter-reset: count var(--var-pz);
+}
+
+.counter_part02::after{
+  --var-pz: 8;
+  animation-delay: .5s;
+  counter-reset: count var(--var-pz);
+}
+
+.counter_part01::after{
+  --var-pz: 9;
+  animation-delay: .75s;
+  counter-reset: count var(--var-pz);
+}
+
+@keyframes anim {
+  0% {
+    --var-pa: calc(-1 * var(--var-pz) + 0);
+   counter-increment: count var(--var-pa);
+  }
+  
+  10% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 0);
+
+    --math-min: min(1, var(--var-pa));
+
+    --math-abs: max( var(--math-min), -1* var(--math-min));
+
+    --var-floor: calc(1 / var(--math-abs));
+
+
+     --math-mod: calc(1 - var(--var-floor)  );
+
+
+    --var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+
+  }
+  20% {
+    --var-pa: calc(-1 * var(--var-pz) + 1);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+  }
+  30% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 2);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+  }
+  40% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 3);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+
+  50% {
+    --var-pa: calc(-1 * var(--var-pz) + 4);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+  }
+  60% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 5);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  70% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 6);
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  80% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 7);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  90% {
+    --var-pa: calc(-1 * var(--var-pz) + 8);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  100% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 9);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+    counter-increment: count var(--var-py);
+
+  }
+
+}
+
+
+
+@keyframes anims {
+  0% {
+    --var-pa: calc(-1 * var(--var-pz) + 0);
+   counter-increment: count var(--var-pa);
+  }
+  
+  10% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 0);
+
+    --math-min: min(1, var(--var-pa));
+
+    --math-abs: max( var(--math-min), -1* var(--math-min));
+
+    --var-floor: calc(1 / var(--math-abs));
+
+
+     --math-mod: calc(1 - var(--var-floor)  );
+
+
+    --var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+
+  }
+  20% {
+    --var-pa: calc(-1 * var(--var-pz) + 1);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+  }
+  30% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 2);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+  }
+  40% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 3);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+
+  50% {
+    --var-pa: calc(-1 * var(--var-pz) + 4);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+
+  }
+  60% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 5);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  70% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 6);
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  80% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 7);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  90% {
+    --var-pa: calc(-1 * var(--var-pz) + 8);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+counter-increment: count var(--var-py);
+  }
+  100% {
+
+    --var-pa: calc(-1 * var(--var-pz) + 9);
+
+    --math-min: min(1, var(--var-pa));
+
+--math-abs: max( var(--math-min), -1* var(--math-min));
+
+--var-floor: calc(1 / var(--math-abs));
+
+
+
+--math-mod: calc(1 - var(--var-floor)  );
+
+
+--var-py: calc(var(--var-pa) * var(--math-mod) );
+
+
+    counter-increment: count var(--var-py);
+
+  }
+
+}
+
+@keyframes lamda_dance{
+0%{
+ transform: rotateX(0deg);
+}
+100%{
+  transform: rotateX(360deg);
+}
+}
+
+@keyframes lamda_dance2{
+0%{
+ transform: rotateX(0deg);
+}
+100%{
+  transform: rotateX(360deg);
+}
+}
+
+
+</style>
+</head>
+<body>
+  
+   <div id="counter_container">
+
+    <span class="counter counter_part01" ></span>
+    <span class="counter counter_part02" ></span>
+    <span class="counter counter_part03" ></span>
+    <span class="counter counter_part04" ></span>
+
+   </div>
+
+
+
+</body>
+</html>

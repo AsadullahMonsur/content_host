@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Secure UI</title>
+
+    <style>
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.view_layout{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: red;
+}
+
+.view_layout div:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    flex-grow: 1;
+    border: 1px solid black;
+    background: tomato;
+}
+
+.view_layout div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border: 1px solid rgb(0, 0, 0);
+    background: rgb(6, 43, 211);
+}
+
+.logout_button{
+    margin-right: 20px;
+    height: 40px;
+    min-width: 150px;
+    background: yellow;
+
+}
+
+    </style>
+
+</head>
+<body>
+
+    <div class="view_layout">
+        <div class="nav_bar">
+            <button class="logout_button">
+                Logout
+            </button>
+        </div>
+
+        <div class="content">
+
+            <div style="height: 0; padding-bottom: calc(56.69%); position:relative; width: 100%;"><iframe allow="autoplay; gyroscope;" allowfullscreen height="100%" referrerpolicy="strict-origin" src="https://www.kapwing.com/e/642b7ae5761fdb0b107633f0" style="border:0; height:100%; left:0; overflow:hidden; position:absolute; top:0; width:100%" title="Embedded content made on Kapwing" width="100%"></iframe></div><p style="font-size: 12px; text-align: right;">Video edited on <a href="https://www.kapwing.com/video-editor">Kapwing</a></p>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>

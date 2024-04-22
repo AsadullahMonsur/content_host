@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+    <title>Neon Text</title>
+    
+    <style>
+
+/*in the Name of Allah*/
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+/*auto indent clt+shit+i*/
+/*this is the root holder*/
+#view_layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#view_layout div{
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(10, 8, 8);
+  overflow: hidden;  
+}
+
+
+.neon{
+    position: absolute;
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.795);
+    text-shadow: 0 0 25px #09ff00;
+    font-stretch: extra-expanded;
+    font-weight: 200;
+    filter: blur(.25px);
+}
+
+.box{
+    height: 75px;
+    width: 400px;
+    background-color: inherit;
+    animation: box_anim 3s infinite alternate-reverse;
+}
+
+@keyframes box_anim{
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(400px);
+    }
+}
+
+
+.bar{
+    height:75px;
+    width: 7px;
+    position: absolute;
+    background: #09ff00;
+    animation: bar_anim 3s infinite alternate-reverse;
+}
+
+@keyframes bar_anim{
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    100%{
+        transform: translateX(200px);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div id="view_layout">
+    <div>
+        <h1 class="neon blue" data-text="in the Name of Allah">in the name of Allah</h1>
+
+        <span class="box first">  </span>
+        <span class="bar  first">  </span>
+
+    </div>
+
+    <div>
+        <h1 class="neon green" data-text="Alhamdulillah">Alhamdulillah</h1>
+
+
+        <span class="box second">  </span>
+        <span class="bar  second">  </span>
+    </div>
+</div>
+
+
+</body>
+</html>

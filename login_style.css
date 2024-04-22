@@ -1,0 +1,134 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+#view_layout{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    background:white;
+}
+
+#container{
+margin: 50px;    
+display: flex;
+flex-direction: row;
+flex-grow: 1;
+justify-content: center;
+align-items: center;
+background:rgba(7, 7, 7, 0.938);
+filter: drop-shadow(rgba(0, 0, 0, 0.473) 1rem 1rem 3px);
+}
+
+.user_authentiction{
+  display: flex;
+  flex-direction: column; 
+  background: transparent;
+}
+
+.form{       
+min-width: 350px; 
+display: flex;
+flex-grow: 1;
+flex-direction: column;
+background: rgb(255, 255, 255);
+align-items: center;
+}
+
+.form a{
+    color: rgb(2, 14, 185);
+}
+
+.form input{
+  margin: 10px;
+  min-width: 80%;
+  min-height: 36px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 10px;
+  outline: 1px solid rgb(39, 37, 37);
+}
+
+.form button{
+   margin: 15px; 
+   min-width: 150px;
+   min-height: 40px;
+   display: flex;
+   flex-grow: 1;
+   flex-direction: column;
+   align-self: center;  
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   background: white;
+   color: black;
+   font-size: large;
+   border-radius: 5px;
+   filter: drop-shadow(black 1px 1px 2px);
+ }
+
+.form button:hover{
+    background: black;
+    color: white;
+}
+
+.cover{  
+    position: absolute;
+    margin-left: -350px;
+    display:flex;
+    min-width: 350px;
+    min-height: 450px;    
+    align-items: center;
+    background: rgba(0, 0, 0, 0.959); 
+    justify-content: center;
+}
+
+
+#switch{
+    position: absolute;
+    margin-left: -350px;
+    display: none;
+}
+
+#toggle_id{
+    position: absolute;
+    margin-left: -350px;
+    font-size: 30px;
+    color: wheat;
+    z-index: 3;
+    transition: .75s;
+}
+
+#switch:not(:checked)  ~  #toggle_id{
+    margin-left: -350px;
+    transition: .75s;
+}
+#switch:not(:checked)  ~  #toggle_id::before{
+    content: "@SignUp";
+    transition: .75s;
+}
+
+#switch:not(:checked)  ~  #blackbox{
+    margin-left: -350px;
+    transition: .75s;
+}
+
+#switch:checked  ~  #toggle_id{
+    margin-left: 350px;
+    transition: .75s;
+}
+
+#switch:checked  ~  #toggle_id::before{
+    content: "@SignIn";
+    transition: .75s;
+}
+
+#switch:checked  ~  #blackbox{
+    margin-left: 350px;
+    transition: .75s;
+}

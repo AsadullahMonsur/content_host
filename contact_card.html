@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+
+    <meta http-equiv="cache-control" content="max-age=0, no-cache, no-store, must-revalidate, private">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <title>Secure UI</title>
+
+    <style>
+
+        html,body {
+    margin: 0;
+    padding: 0;
+
+}
+
+#view_layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(19, 17, 17);
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_profile_card{
+   min-width: 256px;
+   max-width: 256px; 
+   max-height: 256px;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   background: rgb(30, 30, 32);
+   transition: .5s;
+}
+
+.contact_profile_card:hover{
+    box-shadow: 15px 10px 15px 3px rgba(0,0,0,0.2);
+    filter: drop-shadow(3px 3px 2px rgb(6, 7, 7));
+    z-index: 5;
+    border-top: 5px solid rgb(238, 238, 238);
+    transform: translateY(-10px);
+}
+
+.contact_profile_card div:nth-child(1){
+   max-height: 160px;      
+   display: flex;
+   flex-grow: 1;
+   align-items: center;
+   justify-content: center;
+   background: transparent; 
+   transition: 1s;
+}
+
+.contact_profile_card div:nth-child(1):hover img{
+    transform: translateY(-30px);
+    transition: 1s;
+}
+
+.contact_profile_card div:nth-child(1) img{
+   max-width: inherit;
+   max-height: inherit;  
+   background: transparent;
+   transition: 1s; 
+}
+
+.contact_profile_card div:nth-child(2){
+   max-height: 48px;      
+   display: flex;
+   flex-grow: 1;
+   background: rgb(25, 25, 26); 
+}
+
+.contact_profile_card div:nth-child(3){
+   max-height: 48px;      
+   display: flex;
+   flex-grow: 1;
+   background: rgb(25, 25, 26); 
+}
+
+.contact_profile_card div:nth-child(n+2):hover{
+    border-left: 3px solid rgb(238, 238, 238);
+}
+
+
+.contact_profile_card div span{
+   margin: 5px; 
+   min-height: 100%;
+   min-width: 100%;  
+   font-size: 12px;
+   color: white;
+   align-self: center;
+   transition: .5s;
+}
+
+.contact_profile_card div span:hover{
+   margin: 5px;  
+   font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+
+<div id="view_layout">
+
+    <div class="contact_profile_card">
+
+        <div>
+            <img src="profile.jpeg"/> 
+        </div>
+        <div>
+            <span>Name: asadullah monsur</span>
+        </div>
+        <div>
+            <span>Email: asadullahmonsur321@gmail.com</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

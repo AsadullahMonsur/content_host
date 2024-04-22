@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+
+    <meta http-equiv="cache-control" content="max-age=0, no-cache, no-store, must-revalidate, private">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
+    <title>Secure UI</title>
+
+    <style>
+
+
+/*in the Name of Allah*/
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+/*auto indent clt+shit+i*/
+/*this is the root holder*/
+#view_layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgb(236, 235, 235);
+  align-items: center;
+  justify-content: center;
+}
+
+#product_card{
+   min-width: 312px;
+   max-height: 448px;
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   background: rgb(22, 20, 20);
+   filter: drop-shadow(3px 3px 2px rgb(11, 11, 12));
+}
+
+#product_card:hover{
+    box-shadow: 15px 10px 15px 3px rgba(0,0,0,0.2);
+    filter: drop-shadow(3px 3px 2px rgb(1, 55, 172));
+    z-index: 5;
+}
+
+#header{
+   max-height: 50px; 
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   background: rgb(18, 22, 18);
+}
+
+#header span{
+    margin: 10px;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: left;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    transition: .75s;
+    background: transparent;
+}
+
+#scene{
+   position: relative;
+   max-height: 256px;
+   max-width: 312px;  
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   background: transparent;
+}
+
+#scene img{
+    min-width: inherit;
+    max-height: inherit;
+    background: url('nl.jpg');
+    background-size: cover;
+}
+
+#scene span{
+    position: absolute;
+    min-width: 100%;
+    min-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: small;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.74);
+    transition: .75s;
+    background: rgba(78, 75, 75, 0.541);
+}
+
+#scene:hover span{
+    min-height: 0%;
+    visibility: hidden;
+    background: rgba(15, 15, 15, 0.788);
+}
+
+#appendix{
+   max-height: 142px;  
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   background: rgb(18, 22, 18);
+}
+
+
+.section{
+    max-height: 71px;  
+   flex-grow: 1;
+   display: flex;
+   flex-direction: row;
+   background: transparent;
+}
+
+.section div{
+   margin: 5%;
+   min-height: 35px; 
+   flex-grow: 1;
+   display: flex;
+   flex-direction: inherit;
+   color: white;
+   align-items: center;
+   justify-content: center;
+   background: rgb(14, 14, 13);
+}
+    </style>
+</head>
+<body>
+
+<div id="view_layout">
+
+   <div id="product_card">
+
+      <div id="header">
+          <span> Item 01</span>
+      </div>
+     
+     
+      <div id="scene">
+          <span>  Preview  </span>
+          <img  src="shirt.jpeg"/>
+      </div>
+     
+      <div id="appendix">
+        
+         <div class="section">
+
+            <div> Details </div>
+            <div> Discount </div>
+
+         </div>
+
+
+         <div class="section">
+             <div> Add to Wish-list </div>
+         </div>
+
+     </div>
+
+
+   </div>
+
+</div>
+
+</body>
+</html>

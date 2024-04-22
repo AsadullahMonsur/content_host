@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="fragment_about">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+    <title>Secure UI</title>
+
+    <style>
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+#view_layout{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #040716;
+}
+
+.comparison_table_view{
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    overflow-y: scroll;
+}
+
+.table3_view{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background: blue;
+    box-shadow: 0 4px 8px 0 rgba(43, 44, 43, 0.514);
+    z-index: 2;
+    overflow-x: scroll;
+}
+
+.table3_view:hover{
+    box-shadow: 0 8px 16px 0 rgba(22, 80, 187, 0.459);
+}
+
+
+.table3_row{
+    min-height: 50px;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgb(65, 63, 63);
+}
+
+
+.table3_column{
+    min-width: 150px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background: transparent;
+    overflow: visible;
+}
+
+.table3_column:nth-child(odd) .table3_row{
+background: #1a1a1a;
+background: #070c25;
+}
+
+.table3_column:nth-child(even) .table3_row{
+background: #212227;
+background: #03061b;
+}
+
+.table3_row:nth-child(1) span{
+    color: rgb(37, 201, 5);
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    font-stretch: extra-expanded;
+    font-style: italic;
+}
+
+.table3_row:nth-of-type(n+2) span{
+    color: rgb(146, 138, 138);
+}
+
+
+
+@media screen and (max-height: 448px) {
+.table_view3,.table3_view{
+    max-height: 300px;
+}
+
+.table3_row{
+    min-height: 50px;
+}
+
+.table3_row{
+    min-height: 50px;
+}
+
+}
+
+
+@media screen and (min-height: 448px) {
+    .table3_view,.table3_view{
+        max-height: 300px;
+}
+
+.table3_row{
+    min-height: 50px;
+}
+
+.table3_row{
+    min-height: 50px;
+}
+  }
+
+
+  @media screen and (min-height: 550px) {
+    .table3_view,.table3_view{
+        max-height: 500px;
+}
+
+.table3_row{
+    min-height: 70px;
+}
+
+.table3_row{
+    min-height: 70px;
+}
+  }
+
+
+  @media screen and (min-height: 600px) {
+    .table3_view,.table3_view{
+        max-height: 580px;
+}
+
+.table3_row{
+    min-height: 80px;
+}
+
+.table3_row{
+    min-height: 80px;
+}
+  }
+
+
+  @media screen and (min-height: 1024px) {
+    .table3_view,.table3_view{
+        max-height: 700px;
+}
+
+.table3_row{
+    min-height: 100px;
+}
+
+.table3_row{
+    min-height: 100px;
+}
+  }
+
+  
+  @media screen and (max-width: 512px) {
+    .table3_column,.table3_column{
+       min-width: 150px;
+    }
+}
+
+
+@media screen and (min-width: 512px) {
+
+    .table3_column,.table3_column{
+       min-width: 150px;
+    }
+  }
+
+
+  @media screen and (min-width: 700px) {
+    .table3_column,.table3_column{
+       min-width: 200px;
+    }
+  }
+
+
+  @media screen and (min-width: 1024px) {
+    .table3_column,.table3_column{
+      min-width: 250px;
+    }
+  }
+
+    </style>
+
+</head>
+<body>
+
+<div id="view_layout">
+
+    <div class="comparison_table_view">
+
+         <div id="table_criterion" class="table3_view">
+            
+            <div class="table3_column" th:each="data : ${listp}">
+
+                <div class="table3_row" th:each="item : ${data.elements}">
+          
+                    <span th:text="${item}"></span>
+               
+                </div>
+          
+            </div>
+
+        </div>
+
+         <div id="table_contents" class="table3_view"> 
+
+            <div class="table3_column" th:each="data : ${listq}">
+
+                <div class="table3_row" th:each="item : ${data.elements}">
+          
+                    <span th:text="${item}"></span>
+               
+                </div>
+          
+            </div>
+
+         </div>
+    </div>
+
+</div>
+
+</body>
+</html>

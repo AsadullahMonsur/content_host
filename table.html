@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+   <style>
+
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+#view_layout{
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    /*background: #040718;*/
+    background: #040411;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table_view{
+    margin-top: 100px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: inherit;
+    background: #991356;
+    box-shadow: 0 4px 8px 0 rgba(43, 44, 43, 0.514);
+    z-index: 2;
+    overflow: scroll;
+}
+
+.table_view:hover{
+    box-shadow: 0 8px 16px 0 rgba(22, 80, 187, 0.459);
+}
+
+
+.table_row{
+    min-height: 50px;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+}
+
+.table_column{
+    min-width: 150px;
+    display: flex;
+    flex-grow: 1;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(65, 63, 63);
+}
+
+.table_column:nth-child(odd){
+background: #1a1a1a;
+background: #070c25;
+}
+
+.table_column:nth-child(even){
+background: #212227;
+background: #03061b;
+}
+
+.table_row:nth-child(1) span{
+    color: rgb(37, 201, 5);
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    font-stretch: extra-expanded;
+    font-style: italic;
+}
+
+.table_row:nth-of-type(n+2) span{
+    color: rgb(146, 138, 138);
+}
+
+
+/*second type table*/
+
+
+.table2_view{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: 0 4px 8px 0 rgba(43, 44, 43, 0.514);
+    z-index: 2;
+    overflow: scroll;
+}
+
+.table2_view:hover{
+    box-shadow: 0 8px 16px 0 rgba(22, 80, 187, 0.459);
+}
+
+
+.table2_row{
+    min-height: 50px;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid rgb(65, 63, 63);
+}
+
+
+.table2_column{
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.table2_column:nth-child(odd) .table2_row{
+background: #1a1a1a;
+background: #070c25;
+}
+
+.table2_column:nth-child(even) .table2_row{
+background: #212227;
+background: #03061b;
+}
+
+.table2_row:nth-child(1) span{
+    color: rgb(37, 201, 5);
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace; 
+    font-stretch: extra-expanded;
+    font-style: italic;
+}
+
+.table2_row:nth-of-type(n+2) span{
+    color: rgb(146, 138, 138);
+}
+
+
+
+@media screen and (max-height: 448px) {
+.table_view,.table2_view{
+    max-height: 300px;
+}
+
+.table_row{
+    min-height: 50px;
+}
+
+.table2_row{
+    min-height: 50px;
+}
+
+}
+
+
+@media screen and (min-height: 448px) {
+    .table_view,.table2_view{
+        max-height: 300px;
+}
+
+.table_row{
+    min-height: 50px;
+}
+
+.table2_row{
+    min-height: 50px;
+}
+  }
+
+
+  @media screen and (min-height: 550px) {
+    .table_view,.table2_view{
+        max-height: 500px;
+}
+
+.table_row{
+    min-height: 70px;
+}
+
+.table2_row{
+    min-height: 70px;
+}
+  }
+
+
+  @media screen and (min-height: 600px) {
+    .table_view,.table2_view{
+        max-height: 580px;
+}
+
+.table_row{
+    min-height: 80px;
+}
+
+.table2_row{
+    min-height: 80px;
+}
+  }
+
+
+  @media screen and (min-height: 1024px) {
+    .table_view,.table2_view{
+        max-height: 700px;
+}
+
+.table_row{
+    min-height: 100px;
+}
+
+.table2_row{
+    min-height: 100px;
+}
+  }
+
+  
+  @media screen and (max-width: 512px) {
+    .table_column,.table2_column{
+       min-width: 150px;
+    }
+}
+
+
+@media screen and (min-width: 512px) {
+
+    .table_column,.table2_column{
+       min-width: 150px;
+    }
+  }
+
+
+  @media screen and (min-width: 700px) {
+    .table_column,.table2_column{
+       min-width: 200px;
+    }
+  }
+
+
+  @media screen and (min-width: 1024px) {
+    .table_column,.table2_column{
+      min-width: 250px;
+    }
+  }
+   </style>
+
+</head>
+<body>
+
+
+<div id="view_layout">
+
+        
+  <div class="table_view">
+
+    <div class="table_row" th:each="data : ${list2}">
+
+        <div class="table_column" th:each="item : ${data.elements}">
+  
+            <span th:text="${item}"></span>
+       
+        </div>
+  
+    </div>
+
+  </div>
+
+
+
+  <div class="table2_view">
+
+    <div class="table2_column" th:each="data : ${list1}">
+
+        <div class="table2_row" th:each="item : ${data.elements}">
+  
+            <span th:text="${item}"></span>
+       
+        </div>
+  
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+

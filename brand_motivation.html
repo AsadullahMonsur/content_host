@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"
+          name="viewport"
+          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+    <title>Motivation</title>
+    
+    <style>
+/*in the Name of Allah*/
+html,body {
+    margin: 0;
+    padding: 0;
+}
+/*auto indent clt+shit+i*/
+/*this is the root holder*/
+#view_layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  background: url('dark_forest_02.jpg');
+  background-size: cover;
+}
+
+#content{
+  margin: 40px;
+  max-width: 768px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.452);
+  border: 5px solid rgba(151, 149, 149, 0.116);
+  border-radius: 5px;
+  box-shadow:        
+            3px -3px 5px rgba(151, 149, 149, 0.479),
+           -6px  6px 10px hsla(0, 0%, 0%, 0.678);
+  background: linear-gradient(to top right,hsla(0, 0%, 0%, 0.678)) 35%, rgba(151, 149, 149, 0.479) 35%;  
+}
+
+#motivation_content{
+  font-size: 21px;
+  color: rgb(221, 221, 221);
+  font-weight: 100;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#motivation_content span{
+  font-size: 21px;
+
+  font-style: italic;
+}
+
+
+#motivation_source{
+  font-size: 16px;
+
+}
+
+#motivation_content_owner{
+  font-size: 25px;
+
+}
+
+#content:hover> #motivation_content{
+  color: rgb(221, 221, 221);
+}
+
+#content:hover> #motivation_content span{
+  color: rgb(212, 4, 132);
+}
+
+#content:hover> #motivation_source{
+  color: rgb(34, 233, 7);
+}
+
+#content:hover> #motivation_content_owner{
+  color: rgb(9, 98, 214);
+}
+
+#content:hover>#layer{
+  transition: 1s ease-out;
+  min-width: 0px;
+}
+
+#layer{
+ position: absolute;
+ min-width: 80%;
+ min-height: 100%;
+ text-align: center;
+ background: rgba(243, 243, 243, 0.151);
+ transition: 1s ease-out;
+}
+
+</style>
+</head>
+<body>
+<div id="view_layout">
+
+    <div id="content">
+
+      <p id="motivation_content"> O children of adam, I Alone(Allah) have bestowed upon you clothing to conceal your private parts and as adornment. but 
+          
+          <span>the clothing of righteousness</span>  - that is best. that is from the signs of Allah that perhaps they will remember. 
+
+      </p>
+
+      <p id="motivation_source"> [7:26]---[chapter the heights/surah aa'r-af` from Al-Qur'an] </p>
+
+      <p id="motivation_content_owner">Qur'an the guidance from 'Allah-The Wise' </p>
+        
+      <span id="layer">
+
+      </span>
+    </div>
+
+</div>
+
+</body>
+</html>

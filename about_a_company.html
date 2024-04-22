@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+html,body{
+  margin:0;
+
+/*
+    --var-pz: var(--var-px);
+    --math-abs: max(var(--var-pz), -1* var(--var-pz));
+  --var-pz-abs: var(--math-abs);
+  --var-floor: calc(var(--var-pz-abs) / var(--var-pu) - 0.5);
+  --math-mod: calc(var(--var-pz-abs) - calc(var(--var-pu) * var(--var-floor)));
+  --var-pv : var(--math-mod);
+  --var-pw: calc(var(--var-pw) * calc(var(--var-pu) - var(--var-pv)) );
+  --var-py: calc(var(--var-pw) * var(--var-pz));
+
+*/
+
+}
+
+
+#view_layout{
+position: relative;    
+min-height: 100vh; 
+display: flex;
+flex-grow: 1;
+flex-direction: column;
+background: #050b1d;
+color: white;
+overflow: scroll;
+}
+
+.checkbox{
+ margin-left: 20px;
+ margin-top: 10px;   
+min-width: 24px;
+max-width: 24px;
+min-height: 24px;
+max-height: 24px;    
+display: flex;
+flex-grow: 1;
+flex-direction: row;
+}
+
+.label{
+ margin-top: 10px;
+ margin-left: 20px;   
+min-height: 36px;
+max-height: 36px;   
+position: relative;    
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: left;
+}
+
+#view_layout div:nth-child(n){
+min-height:200px;    
+display: flex;
+flex-grow: 1;
+flex-direction: column;
+transition: 1.25s;
+background: rgb(111, 120, 148);
+}
+
+
+#company_option:not(:checked) ~ #company_section{
+min-height: 0;
+max-height: 0;
+
+}
+
+#product_option:not(:checked) ~ #product_section{
+min-height: 0;
+max-height: 0;
+}
+
+#authority_option:not(:checked) ~ #authority_section{
+min-height: 0;
+max-height: 0;
+}
+
+#customer_option:not(:checked) ~ #customer_section{
+min-height: 0;
+max-height: 0;
+}
+
+</style>
+</head>
+<body>
+  
+<div id="view_layout">
+
+   <label class="label" for="company_option"> Company </label> 
+   <input class="checkbox" id="company_option" type="checkbox" checked/>
+   <div id="company_section" >
+
+   </div>
+
+   <label class="label" for="product_option"> Product </label> 
+   <input class="checkbox" id="product_option" type="checkbox" />
+   <div id="product_section">
+
+   </div>
+
+   <label class="label" for="authority_option"> Authority </label> 
+   <input class="checkbox" id="authority_option" type="checkbox" />
+   <div id="authority_section">
+
+   </div>
+
+   <label class="label" for="customer_option"> Customer </label> 
+   <input class="checkbox" id="customer_option" type="checkbox" checked/>
+   <div id="customer_section">
+
+   </div>
+
+</div>
+
+</body>
+</html>

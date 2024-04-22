@@ -1,0 +1,89 @@
+body{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+    display:flex;
+    flex:1;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+    background:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    --bgcb: rgba(9, 10, 14, 0.78);
+    --bgcw: rgba(255, 255, 255, 0.692);
+    --iconwide: 512px;
+    overflow: hidden;
+}
+
+.viewer{
+    min-height: var(--iconwide);
+    min-width: var(--iconwide);
+    max-height: var(--iconwide);
+    max-width: var(--iconwide);
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    overflow:hidden;
+    transform: rotate(0deg);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    background: var(--bgcb);
+}
+
+.cube{
+    outline: 2px solid rgb(255, 255, 255);
+    width: 64vmin;
+    height:64vmin;
+    cursor: pointer;
+    display: block;
+}
+  
+.cube path {
+    fill: transparent;
+    stroke:rgb(245, 245, 245);
+    stroke-width: .08px;
+}
+
+#AB{
+    stroke:rgb(10, 25, 160);
+}
+
+#AD{
+   stroke:rgb(10, 25, 160);
+}
+
+#BC{
+    stroke:rgb(202, 11, 11);
+}
+
+#BG{
+    stroke:rgb(202, 11, 11);
+}
+
+#CD{
+    stroke:rgb(10, 25, 160);
+}
+
+#CF{
+    stroke:rgb(44, 177, 11);
+}
+
+#DE{
+    stroke:rgb(44, 177, 11); 
+}
+
+#EF{
+    stroke:rgb(44, 177, 11); 
+}
+
+#FG{
+    stroke:rgb(202, 11, 11);
+}
+.cube:hover path {
+
+}
+  
+  
