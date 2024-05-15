@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{
+  margin: 0;
+  padding: 0;
+  --loading-bg: transparent;
+  --loading-fill:  rgba(80, 240, 16, 0.842);
+  --loading-text:rgb(80, 240, 16);
+  --loading-border:rgb(80, 240, 16);
+}
+
+.view_content{
+min-height:100vh;
+display:flex;
+position:relative;
+flex-direction:row;
+align-items:center;
+justify-content:center;
+background: url('nl.jpg');
+background-size: cover;
+}
+.circle {
+  border: 1px solid var(--loading-border);
+  border-radius: 50%;
+  background: url('nl.jpg');
+  background-size: cover;
+  display: flex;
+}
+
+.inner{
+  height: 160px;
+  width: 160px;
+  position:absolute;
+}
+.outer{
+  height: 180px;
+  width: 180px;
+  position:absolute;
+  background-image: conic-gradient( var(--loading-fill) 0deg, var(--loading-bg) 0deg);
+  animation: circular_progress 3s infinite ease;
+}
+
+.text{
+  height: 160px;
+  width: 160px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  color: var(--loading-text);
+  background: transparent;
+  font: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-size: medium;
+}
+.text::after{
+   content: '0%';
+   animation: text_progress 3s infinite ease;
+}
+
+@keyframes circular_progress{
+   0%{   
+      background-image: conic-gradient( var(--loading-fill) 0deg,var(--loading-bg) 0deg); 
+   }
+   1%{   
+    background-image: conic-gradient(var(--loading-fill) 4deg,var(--loading-bg) 0deg); 
+   }
+   2%{   
+    background-image: conic-gradient(var(--loading-fill) 8deg,var(--loading-bg) 0deg); 
+   }
+   3%{   
+    background-image: conic-gradient(var(--loading-fill) 12deg,var(--loading-bg) 0deg); 
+   }
+   4%{   
+    background-image: conic-gradient(var(--loading-fill) 16deg,var(--loading-bg) 0deg); 
+   }
+   5%{   
+    background-image: conic-gradient(var(--loading-fill) 20deg,var(--loading-bg) 0deg); 
+   }
+   6%{   
+    background-image: conic-gradient(var(--loading-fill) 24deg,var(--loading-bg) 0deg); 
+   }
+   7%{   
+    background-image: conic-gradient(var(--loading-fill) 28deg,var(--loading-bg) 0deg); 
+   }
+   8%{   
+    background-image: conic-gradient(var(--loading-fill) 32eg,var(--loading-bg) 0deg); 
+   }
+   9%{   
+    background-image: conic-gradient(var(--loading-fill) 36deg,var(--loading-bg) 0deg); 
+   }
+   10%{   
+    background-image: conic-gradient(var(--loading-fill) 40deg,var(--loading-bg) 0deg); 
+   }
+   11%{   
+    background-image: conic-gradient(var(--loading-fill) 44deg,var(--loading-bg) 0deg); 
+   }
+   12%{   
+    background-image: conic-gradient(var(--loading-fill) 48deg,var(--loading-bg) 0deg); 
+   }  
+   13%{
+background-image: conic-gradient(var(--loading-fill) 52deg,var(--loading-bg) 0deg);
+   }
+   14%{   
+    background-image: conic-gradient(var(--loading-fill) 56deg,var(--loading-bg) 0deg); 
+   }
+   15%{   
+    background-image: conic-gradient(var(--loading-fill) 60deg,var(--loading-bg) 0deg); 
+   }
+   16%{   
+    background-image: conic-gradient(var(--loading-fill) 64deg,var(--loading-bg) 0deg); 
+   }
+   17%{   
+    background-image: conic-gradient(var(--loading-fill) 68deg,var(--loading-bg) 0deg); 
+   }
+   18%{   
+    background-image: conic-gradient(var(--loading-fill) 72deg,var(--loading-bg) 0deg); 
+   }
+   19%{   
+    background-image: conic-gradient(var(--loading-fill) 76deg,var(--loading-bg) 0deg); 
+   }
+   20%{   
+    background-image: conic-gradient(var(--loading-fill) 80deg,var(--loading-bg) 0deg); 
+   }
+   21%{   
+    background-image: conic-gradient(var(--loading-fill) 84deg,var(--loading-bg) 0deg); 
+   }
+   22%{   
+    background-image: conic-gradient(var(--loading-fill) 88deg,var(--loading-bg) 0deg); 
+   }
+   23%{
+background-image: conic-gradient(var(--loading-fill) 92deg,var(--loading-bg) 0deg);
+   }
+   24%{
+background-image: conic-gradient(var(--loading-fill) 96deg,var(--loading-bg) 0deg);   
+}
+25%{   
+    background-image: conic-gradient(var(--loading-fill) 100deg,var(--loading-bg) 0deg); 
+   }
+   26%{   
+    background-image: conic-gradient(var(--loading-fill) 104deg,var(--loading-bg) 0deg); 
+   }
+   27%{   
+    background-image: conic-gradient(var(--loading-fill) 108deg,var(--loading-bg) 0deg); 
+   }
+   28%{   
+    background-image: conic-gradient(var(--loading-fill) 112deg,var(--loading-bg) 0deg); 
+   }
+   29%{   
+    background-image: conic-gradient(var(--loading-fill) 116deg,var(--loading-bg) 0deg); 
+   }
+   30%{   
+    background-image: conic-gradient(var(--loading-fill) 120deg,var(--loading-bg) 0deg); 
+   }
+   31%{   
+    background-image: conic-gradient(var(--loading-fill) 124deg,var(--loading-bg) 0deg); 
+   }
+   32%{   
+    background-image: conic-gradient(var(--loading-fill) 128deg,var(--loading-bg) 0deg); 
+   }
+   33%{   
+    background-image: conic-gradient(var(--loading-fill) 132deg,var(--loading-bg) 0deg); 
+   }
+   34%{   
+    background-image: conic-gradient(var(--loading-fill) 136deg,var(--loading-bg) 0deg); 
+   }
+35%{
+background-image: conic-gradient(var(--loading-fill) 140deg,var(--loading-bg) 0deg);   
+}
+   36%{
+background-image: conic-gradient(var(--loading-fill)k 144deg,var(--loading-bg) 0deg);
+   }
+   37%{   
+    background-image: conic-gradient(var(--loading-fill) 148deg,var(--loading-bg) 0deg); 
+   }
+   38%{   
+    background-image: conic-gradient(var(--loading-fill) 152deg,var(--loading-bg) 0deg); 
+   }
+   39%{   
+    background-image: conic-gradient(var(--loading-fill) 156deg,var(--loading-bg) 0deg); 
+   }
+   40%{   
+    background-image: conic-gradient(var(--loading-fill) 160deg,var(--loading-bg) 0deg); 
+   }
+   41%{   
+    background-image: conic-gradient(var(--loading-fill) 164deg,var(--loading-bg) 0deg); 
+   }
+   42%{   
+    background-image: conic-gradient(var(--loading-fill) 168deg,var(--loading-bg) 0deg); 
+   }
+   43%{   
+    background-image: conic-gradient(var(--loading-fill) 172deg,var(--loading-bg) 0deg); 
+   }
+   44%{   
+    background-image: conic-gradient(var(--loading-fill) 176deg,var(--loading-bg) 0deg); 
+   }
+   45%{   
+    background-image: conic-gradient(var(--loading-fill) 180deg,var(--loading-bg) 0deg); 
+   }
+   46%{   
+    background-image: conic-gradient(var(--loading-fill) 184deg,var(--loading-bg) 0deg); 
+   }
+   47%{
+background-image: conic-gradient(var(--loading-fill) 188deg,var(--loading-bg) 0deg);
+   }
+   48%{
+background-image: conic-gradient(var(--loading-fill) 192deg,var(--loading-bg) 0deg);
+   }
+   49%{   
+    background-image: conic-gradient(var(--loading-fill) 196deg,var(--loading-bg) 0deg); 
+   }
+   50%{   
+    background-image: conic-gradient(var(--loading-fill) 200deg,var(--loading-bg) 0deg); 
+   }
+   51%{   
+    background-image: conic-gradient(var(--loading-fill) 204deg,var(--loading-bg) 0deg); 
+   }
+   52%{   
+    background-image: conic-gradient(var(--loading-fill) 208deg,var(--loading-bg) 0deg); 
+   }
+   53%{   
+    background-image: conic-gradient(var(--loading-fill) 212deg,var(--loading-bg) 0deg); 
+   }
+   54%{   
+    background-image: conic-gradient(var(--loading-fill) 216deg,var(--loading-bg) 0deg); 
+   }
+   55%{   
+    background-image: conic-gradient(var(--loading-fill) 220deg,var(--loading-bg) 0deg); 
+   }
+   56%{   
+    background-image: conic-gradient(var(--loading-fill) 224deg,var(--loading-bg) 0deg); 
+   }
+   57%{   
+    background-image: conic-gradient(var(--loading-fill) 228deg,var(--loading-bg) 0deg); 
+   }
+   58%{   
+    background-image: conic-gradient(var(--loading-fill) 232deg,var(--loading-bg) 0deg); 
+   }
+   59%{
+background-image: conic-gradient(var(--loading-fill) 236deg,var(--loading-bg) 0deg);
+   }
+   60%{
+background-image: conic-gradient(var(--loading-fill) 240deg,var(--loading-bg) 0deg);
+   }
+   61%{   
+    background-image: conic-gradient(var(--loading-fill) 244deg,var(--loading-bg) 0deg); 
+   }
+   62%{   
+    background-image: conic-gradient(var(--loading-fill) 248deg,var(--loading-bg) 0deg); 
+   }
+   63%{   
+    background-image: conic-gradient(var(--loading-fill) 252deg,var(--loading-bg) 0deg); 
+   }
+   64%{   
+    background-image: conic-gradient(var(--loading-fill) 256deg,var(--loading-bg) 0deg); 
+   }
+   65%{   
+    background-image: conic-gradient(var(--loading-fill) 260deg,var(--loading-bg) 0deg); 
+   }
+   66%{   
+    background-image: conic-gradient(var(--loading-fill) 264deg,var(--loading-bg) 0deg); 
+   }
+   67%{
+background-image: conic-gradient(var(--loading-fill) 268deg,var(--loading-bg) 0deg);
+   }
+   68%{   
+    background-image: conic-gradient(var(--loading-fill) 272deg,var(--loading-bg) 0deg); 
+   }
+   69%{   
+    background-image: conic-gradient(var(--loading-fill) 274deg,var(--loading-bg) 0deg); 
+   }
+   70%{   
+    background-image: conic-gradient(var(--loading-fill) 278deg,var(--loading-bg) 0deg); 
+   }
+   71%{   
+    background-image: conic-gradient(var(--loading-fill) 282deg,var(--loading-bg) 0deg); 
+   }
+  72%{
+background-image: conic-gradient(var(--loading-fill) 286deg,var(--loading-bg) 0deg);
+   }
+   73%{   
+    background-image: conic-gradient(var(--loading-fill) 290deg,var(--loading-bg) 0deg); 
+   }
+   74%{   
+    background-image: conic-gradient(var(--loading-fill) 294deg,var(--loading-bg) 0deg); 
+   }
+   75%{   
+    background-image: conic-gradient(var(--loading-fill) 298deg,var(--loading-bg) 0deg); 
+   }
+   76%{   
+    background-image: conic-gradient(var(--loading-fill) 302deg,var(--loading-bg) 0deg); 
+   }
+   77%{   
+    background-image: conic-gradient(var(--loading-fill) 306deg,var(--loading-bg) 0deg); 
+   }
+   78%{   
+    background-image: conic-gradient(var(--loading-fill) 312deg,var(--loading-bg) 0deg); 
+   }
+   79%{   
+    background-image: conic-gradient(var(--loading-fill) 316deg,var(--loading-bg) 0deg); 
+   }
+   80%{   
+    background-image: conic-gradient(var(--loading-fill) 320deg,var(--loading-bg) 0deg); 
+   }
+   81%{   
+    background-image: conic-gradient(var(--loading-fill) 324deg,var(--loading-bg) 0deg); 
+   }
+   82%{   
+    background-image: conic-gradient(var(--loading-fill) 328deg,var(--loading-bg) 0deg); 
+   }
+   83%{
+background-image: conic-gradient(var(--loading-fill) 332deg,var(--loading-bg) 0deg);
+   }
+  84%{
+background-image: conic-gradient(var(--loading-fill) 336deg,var(--loading-bg) 0deg);
+   }
+   85%{   
+    background-image: conic-gradient(var(--loading-fill) 340deg,var(--loading-bg) 0deg); 
+   }
+   86%{   
+    background-image: conic-gradient(var(--loading-fill) 344deg,var(--loading-bg) 0deg); 
+   }
+   87%{   
+    background-image: conic-gradient(var(--loading-fill) 348deg,var(--loading-bg) 0deg); 
+   }
+   88%{   
+    background-image: conic-gradient(var(--loading-fill) 352deg,var(--loading-bg) 0deg); 
+   }
+   89%{   
+    background-image: conic-gradient(var(--loading-fill) 356deg,var(--loading-bg) 0deg); 
+   }
+   90%{   
+    background-image: conic-gradient(var(--loading-fill) 360deg,var(--loading-bg) 0deg); 
+   }
+   91%{   
+    background-image: conic-gradient(var(--loading-fill) 360deg,var(--loading-bg) 0deg); 
+   }
+   92%{   
+    background-image: conic-gradient(var(--loading-fill) 360deg,var(--loading-bg) 0deg); 
+   }
+   93%{   
+    background-image: conic-gradient(var(--loading-fill) 360deg,var(--loading-bg) 0deg); 
+   }
+   94%{   
+    background-image: conic-gradient(var(--loading-fill) 360deg,var(--loading-bg) 0deg); 
+   }
+   95%{   
+    background-image: conic-gradient(var(--loading-fill) 0deg,var(--loading-bg) 0deg); 
+   }
+   96%{   
+    background-image: conic-gradient(var(--loading-fill) 0deg,var(--loading-bg) 0deg); 
+   }
+   97%{   
+    background-image: conic-gradient(var(--loading-fill) 0deg,var(--loading-bg) 0deg); 
+   }
+   98%{   
+    background-image: conic-gradient(var(--loading-fill) 0deg,var(--loading-bg) 0deg); 
+   }
+   99%{
+background-image: conic-gradient(var(--loading-fill) 0deg,var(--loading-bg) 0deg);
+   }
+    100%{
+background-image: conic-gradient(var(--loading-fill) 0deg,var(--loading-bg) 0deg);
+   }
+
+}
+
+@keyframes text_progress{
+   0%{   
+    content: '0%';
+   }
+   1%{   
+      content: '1%';
+   }
+   2%{   
+      content: '2%';
+   }
+   3%{   
+      content: '3%';
+   }
+   4%{   
+      content: '4%';
+   }
+   5%{   
+      content: '5%';
+   }
+   6%{   
+      content: '6%';
+   }
+   7%{   
+      content: '7%';
+   }
+   8%{   
+      content: '8%';
+   }
+   9%{   
+      content: '9%';
+   }
+   10%{   
+      content: '10%';
+   }
+   11%{   
+      content: '11%';
+   }
+   12%{   
+      content: '12%';
+   }  
+   13%{
+      content: '13%';
+   }
+   14%{   
+      content: '14%';
+   }
+   15%{   
+      content: '15%';
+   }
+   16%{   
+      content: '16%';
+   }
+   17%{   
+      content: '17%';
+   }
+   18%{   
+      content: '18%';
+   }
+   19%{   
+      content: '19%';
+   }
+   20%{   
+      content: '20%';
+   }
+   21%{   
+      content: '21%';
+   }
+   22%{   
+      content: '22%'; 
+   }
+   23%{
+      content: '23%';
+   }
+   24%{
+      content: '24%';  
+}
+25%{   
+   content: '25%';
+   }
+   26%{   
+      content: '26%';
+   }
+   27%{   
+      content: '27%';
+   }
+   28%{   
+      content: '28%';
+   }
+   29%{   
+      content: '29%';
+   }
+   30%{   
+      content: '30%';
+   }
+   31%{   
+      content: '31%';
+   }
+   32%{   
+      content: '32%';
+   }
+   33%{   
+      content: '33%';
+   }
+   34%{   
+      content: '34%'; 
+   }
+35%{
+   content: '35%'; 
+}
+   36%{
+      content: '36%';
+   }
+   37%{   
+      content: '37%'; 
+   }
+   38%{   
+      content: '38%'; 
+   }
+   39%{   
+      content: '39%';
+   }
+   40%{   
+      content: '40%';
+   }
+   41%{   
+      content: '41%';
+   }
+   42%{   
+      content: '42%';
+   }
+   43%{   
+      content: '43%';
+   }
+   44%{   
+      content: '44%';
+   }
+   45%{   
+      content: '45%';
+   }
+   46%{   
+      content: '46%';
+   }
+   47%{
+      content: '47%';
+   }
+   48%{
+      content: '48%';
+   }
+   49%{   
+      content: '49%';
+   }
+   50%{   
+      content: '50%';
+   }
+   51%{   
+      content: '51%';
+   }
+   52%{   
+      content: '52%';
+   }
+   53%{   
+      content: '53%';
+   }
+   54%{   
+      content: '54%';
+   }
+   55%{   
+      content: '55%';
+   }
+   56%{   
+      content: '56%';
+   }
+   57%{   
+      content: '57%';
+   }
+   58%{   
+      content: '58%';
+   }
+   59%{
+      content: '59%';
+   }
+   60%{
+      content: '60%';
+   }
+   61%{   
+      content: '61%';
+   }
+   62%{   
+      content: '62%';
+   }
+   63%{   
+      content: '63%'; 
+   }
+   64%{   
+      content: '64%';
+   }
+   65%{   
+      content: '65%';
+   }
+   66%{   
+      content: '66%';
+   }
+   67%{
+      content: '67%';
+   }
+   68%{   
+      content: '68%';
+   }
+   69%{   
+      content: '69%';
+   }
+   70%{   
+      content: '70%';
+   }
+   71%{   
+      content: '71%';
+   }
+  72%{
+   content: '72%';
+   }
+   73%{   
+      content: '73%';
+   }
+   74%{   
+      content: '74%';
+   }
+   75%{   
+      content: '75%';
+   }
+   76%{   
+      content: '76%';
+   }
+   77%{   
+      content: '77%'; 
+   }
+   78%{   
+      content: '78%';
+   }
+   79%{   
+      content: '79%';
+   }
+   80%{   
+      content: '80%'; 
+   }
+   81%{   
+      content: '81%'; 
+   }
+   82%{   
+      content: '82%'; 
+   }
+   83%{
+      content: '83%';
+   }
+  84%{
+   content: '84%';
+   }
+   85%{   
+      content: '85%';
+   }
+   86%{   
+      content: '86%';
+   }
+   87%{   
+      content: '87%';
+   }
+   88%{   
+      content: '88%';
+   }
+   89%{   
+      content: '89%';
+   }
+   90%{   
+      content: '90%';
+   }
+   91%{   
+      content: '91%';
+   }
+   92%{   
+      content: '92%';
+   }
+   93%{   
+      content: '93%';
+   }
+   94%{   
+      content: '94%';
+   }
+   95%{   
+      content: '95%';
+   }
+   96%{   
+      content: '96%';
+   }
+   97%{   
+      content: '97%'; 
+   }
+   98%{   
+      content: '98%'; 
+   }
+   99%{
+      content: '99%';
+   }
+    100%{
+      content: '100%';
+   }
+}
+
+</style>
+</head>
+<body>
+
+<div class="view_content">
+  <span class="circle outer"></span>
+  <span class="circle inner"></span>
+  <span class="text"></span>
+</div>
+
+</body>
+</html> 
