@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Animation </title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        --bar-pre-fill:black;
+        --bar-post-fill:transparent;
+      }
+
+      .viewer_content{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        background: rgb(255, 255, 255);
+      }
+
+      .music_container{
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        max-width: 256px;
+        min-height: 256px;
+        justify-content: center;
+        align-items: center;
+        background: rgb(167, 167, 167);
+        transform: rotateZ(-180deg);
+      }
+
+      .music_container:hover{
+        box-shadow: 5px 5px 5px black;
+      }
+
+      .music_bar{
+        margin: 10px;
+        display: flex;
+        flex-grow: 1;
+        max-width: 10px;
+        min-height: 150px;
+        background: linear-gradient(var(--bar-pre-fill) 100%, var(--bar-post-fill) 100%);
+      }
+      
+      .music_bar:nth-child(2n){
+        animation: do 1.3s infinite ;
+      }
+
+      .music_bar:nth-child(2n+1){
+        animation: do 1.7s infinite ;
+      }
+
+      .music_bar:nth-child(3n){
+        animation: do 2.2s infinite ;
+      }
+
+
+      @keyframes do{
+        0%{
+          background: linear-gradient(var(--bar-pre-fill) 100%, var(--bar-post-fill) 100%);
+        }
+        10%{
+          background: linear-gradient(var(--bar-pre-fill) 80%, var(--bar-post-fill) 80%);
+        }
+        20%{
+          background: linear-gradient(var(--bar-pre-fill) 60%, var(--bar-post-fill) 60%);
+        }
+        30%{
+          background: linear-gradient(var(--bar-pre-fill) 40%, var(--bar-post-fill) 40%);
+        }
+        40%{
+          background: linear-gradient(var(--bar-pre-fill) 20%, var(--bar-post-fill) 20%);
+        }
+
+        50%{
+          background: linear-gradient(var(--bar-pre-fill) 0%, var(--bar-post-fill) 0%);
+        }
+        60%{
+          background: linear-gradient(var(--bar-pre-fill) 20%, var(--bar-post-fill) 20%);
+        }
+        70%{
+          background: linear-gradient(var(--bar-pre-fill) 40%, var(--bar-post-fill) 40%);
+        }
+        80%{
+          background: linear-gradient(var(--bar-pre-fill) 60%, var(--bar-post-fill) 60%);
+        }
+        90%{
+          background: linear-gradient(var(--bar-pre-fill) 80%, var(--bar-post-fill) 80%);
+        }
+        100%{
+          background: linear-gradient(var(--bar-pre-fill) 100%, var(--bar-post-fill) 100%);
+        }
+
+        
+      }
+    </style>
+</head>
+<body>
+
+<div class="viewer_content">
+
+  <div class="music_container">
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+    <span class="music_bar"> </span>
+  </div>
+</div>
+  
+</body>
+</html>
