@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"
+    <meta
+          lang="en"
+          charset="UTF-8"
           name="viewport"
           content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
 
@@ -9,7 +11,7 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="expires" content="0">
 
-    <title>Secure UI</title>
+    <title>UI Hut</title>
 
     <style>
 
@@ -24,23 +26,54 @@ html,body {
 #view_layout {
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background: rgb(151, 151, 151);
+}
+
+.header{
+display:flex;
+flex-grow:1;
   align-items: center;
   justify-content: center;
 }
 
-#view_layout ul{  
-min-width: 312px;
+.content{
+max-height:512px;
+display:flex;
+flex-direction:row;
+flex-grow:5;
+overflow: scroll;
+}
+
+.footer{
+display:flex;
+flex-grow:1;
+  align-items: center;
+  justify-content: center;
+}
+
+.column{
+display:flex;
+flex-direction:row;
+flex-grow:1;
+}
+
+.column ul{
+min-width:312px;
 display: flex;
 flex-direction: column;
 overflow-x: hidden;
 overflow-y: scroll;
 }
 
-#view_layout ul li{
-margin-left: -15px;             
-min-height: 45px;  
+.column ul li:nth-child(1){
+min-height: 45px;
+display: flex;
+flex-direction: row;
+}
+
+.column ul li:nth-child(n+2){
+min-height: 45px;
 padding-left: 15px;
 display: flex;
 flex-direction: row;
@@ -48,17 +81,76 @@ align-items: center;
 justify-content: left;
 }
 
-#view_layout ul li:hover{
+.column ul li:hover{
 background: rgba(12, 20, 87, 0.432);
 color: rgb(238, 238, 238);    
 }
 
-#view_layout ul li a{
+.column ul li a{
 color: rgb(0, 0, 0);
 }
 
-#view_layout ul li a:hover{
+.column ul li a:hover{
 color: rgb(238, 238, 238);
+}
+
+.tab{
+min-height:40px;
+margin-left: 0;
+padding-left: 0;
+display:flex;
+flex-grow:1;
+background: green;
+color:white;
+align-items: center;
+justify-content: center;
+}
+@media screen and (min-height: 500px) {
+  #view_layout {
+    min-height: 100vh;
+  }
+
+}
+
+@media screen and (min-height: 700px) {
+  #view_layout {
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-height: 1024px) {
+  #view_layout {
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-height: 1280px) {
+  #view_layout {
+    min-height: 100vh;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+.content{
+ flex-direction:column;
+}
+}
+
+@media screen and (min-width: 500px) {
+
+}
+
+@media screen and (min-width: 700px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1280px) {
+
 }
     </style>
 </head>
@@ -66,376 +158,228 @@ color: rgb(238, 238, 238);
 
 <div id="view_layout">
 
-    <h5> HTML and CSS only for Server Side Rendering [SSR] </h5>
-
-
-    <ul>
-        <li> 
-            <a href="content.html"> 99 Names of Allah</a>
-        </li>
-
-        <li>
-            <a href="faith_testimony.html"> Testimony of Islam</a>
-        </li>
-
-        <li>
-            <a href="neon_text.html"> Neon Word Animation</a>
-        </li>
-
-        <li>
-            <a href="flying_button.html"> Button Effect Type01 </a>
-        </li>
-
-        <li>
-            <a href="website_name_decoration.html"> Brand Title Demo</a>
-        </li>
-
-        <li>
-            <a href="bubble_effects.html"> Bubble Effect </a>
-        </li>
-
-        <li>
-            <a href="rotation.html"> Advance Menu [Frame Only] </a>
-        </li>
-
-        <li>
-            <a href="progress_round.html"> Circular Progress </a>
-        </li>
-
-        <li>
-            <a href="square_flip.html"> Progress Type 01 </a>
-        </li>
-
-        <li>
-            <a href="progress_circle.html"> Progress Type 02 </a>
-        </li>
-
-        <li>
-            <a href="forms.html"> Different Html Inputs</a>
-        </li>
-
-        <li>
-            <a href="login.html"> User Authentication  Demo 1 </a>
-        </li>
-
-        <li>
-            <a href="login_2.html"> User Authentication  Demo 2 </a>
-        </li>
-
-        <li>
-            <a href="brand_motivation.html"> Glass Morphism </a>
-        </li>
-
-        <li>
-            <a href="card_bg.html"> Gradient Card </a>
-        </li>
-
-        <li>
-            <a href="card_pure_glass.html"> Glass Card </a>
-        </li>
-
-        <li>
-            <a href="card.html"> Product Card </a>
-        </li>
-
-        <li>
-            <a href="count_animation_base.html"> Visitors Count </a>
-        </li>
-
-        <li>
-            <a href="train_animation.html"> Scroll items </a>
-        </li>
-
-        <li>
-            <a href="blast_wheel_svg_animation_01.html"> SVG Art/Shape Animation 1</a>
-        </li>
-
-
-        <li>
-            <a href="cube_svg_animation_02.html"> SVG Art/Shape Animation 2</a>
-        </li>
-
-        <li>
-            <a href="cube_svg_animation_03.html"> SVG Art/Shape Animation 3</a>
-        </li>
-
-    </ul>
-
-    <ul>
-        <li>
-            <a href="content.html"> 99 Names of Allah</a>
-        </li>
-
-        <li>
-            <a href="faith_testimony.html"> Testimony of Islam</a>
-        </li>
-
-        <li>
-            <a href="neon_text.html"> Neon Word Animation</a>
-        </li>
-
-        <li>
-            <a href="flying_button.html"> Button Effect Type01 </a>
-        </li>
-
-        <li>
-            <a href="website_name_decoration.html"> Brand Title Demo</a>
-        </li>
-
-        <li>
-            <a href="bubble_effects.html"> Bubble Effect </a>
-        </li>
-
-        <li>
-            <a href="rotation.html"> Advance Menu [Frame Only] </a>
-        </li>
-
-        <li>
-            <a href="progress_round.html"> Circular Progress </a>
-        </li>
-
-        <li>
-            <a href="square_flip.html"> Progress Type 01 </a>
-        </li>
-
-        <li>
-            <a href="progress_circle.html"> Progress Type 02 </a>
-        </li>
-
-        <li>
-            <a href="forms.html"> Different Html Inputs</a>
-        </li>
-
-        <li>
-            <a href="login.html"> User Authentication  Demo 1 </a>
-        </li>
-
-        <li>
-            <a href="login_2.html"> User Authentication  Demo 2 </a>
-        </li>
-
-        <li>
-            <a href="brand_motivation.html"> Glass Morphism </a>
-        </li>
-
-        <li>
-            <a href="card_bg.html"> Gradient Card </a>
-        </li>
-
-        <li>
-            <a href="card_pure_glass.html"> Glass Card </a>
-        </li>
-
-        <li>
-            <a href="card.html"> Product Card </a>
-        </li>
-
-        <li>
-            <a href="count_animation_base.html"> Visitors Count </a>
-        </li>
-
-        <li>
-            <a href="train_animation.html"> Scroll items </a>
-        </li>
-
-        <li>
-            <a href="blast_wheel_svg_animation_01.html"> SVG Art/Shape Animation 1</a>
-        </li>
-
-
-        <li>
-            <a href="cube_svg_animation_02.html"> SVG Art/Shape Animation 2</a>
-        </li>
-
-        <li>
-            <a href="cube_svg_animation_03.html"> SVG Art/Shape Animation 3</a>
-        </li>
-
-    </ul>
-
-    <ul>
-        <li>
-            <a href="content.html"> 99 Names of Allah</a>
-        </li>
-
-        <li>
-            <a href="faith_testimony.html"> Testimony of Islam</a>
-        </li>
-
-        <li>
-            <a href="neon_text.html"> Neon Word Animation</a>
-        </li>
-
-        <li>
-            <a href="flying_button.html"> Button Effect Type01 </a>
-        </li>
-
-        <li>
-            <a href="website_name_decoration.html"> Brand Title Demo</a>
-        </li>
-
-        <li>
-            <a href="bubble_effects.html"> Bubble Effect </a>
-        </li>
-
-        <li>
-            <a href="rotation.html"> Advance Menu [Frame Only] </a>
-        </li>
-
-        <li>
-            <a href="progress_round.html"> Circular Progress </a>
-        </li>
-
-        <li>
-            <a href="square_flip.html"> Progress Type 01 </a>
-        </li>
-
-        <li>
-            <a href="progress_circle.html"> Progress Type 02 </a>
-        </li>
-
-        <li>
-            <a href="forms.html"> Different Html Inputs</a>
-        </li>
-
-        <li>
-            <a href="login.html"> User Authentication  Demo 1 </a>
-        </li>
-
-        <li>
-            <a href="login_2.html"> User Authentication  Demo 2 </a>
-        </li>
-
-        <li>
-            <a href="brand_motivation.html"> Glass Morphism </a>
-        </li>
-
-        <li>
-            <a href="card_bg.html"> Gradient Card </a>
-        </li>
-
-        <li>
-            <a href="card_pure_glass.html"> Glass Card </a>
-        </li>
-
-        <li>
-            <a href="card.html"> Product Card </a>
-        </li>
-
-        <li>
-            <a href="count_animation_base.html"> Visitors Count </a>
-        </li>
-
-        <li>
-            <a href="train_animation.html"> Scroll items </a>
-        </li>
-
-        <li>
-            <a href="blast_wheel_svg_animation_01.html"> SVG Art/Shape Animation 1</a>
-        </li>
-
-
-        <li>
-            <a href="cube_svg_animation_02.html"> SVG Art/Shape Animation 2</a>
-        </li>
-
-        <li>
-            <a href="cube_svg_animation_03.html"> SVG Art/Shape Animation 3</a>
-        </li>
-
-    </ul>
-
-    <ul>
-        <li>
-            <a href="content.html"> 99 Names of Allah</a>
-        </li>
-
-        <li>
-            <a href="faith_testimony.html"> Testimony of Islam</a>
-        </li>
-
-        <li>
-            <a href="neon_text.html"> Neon Word Animation</a>
-        </li>
-
-        <li>
-            <a href="flying_button.html"> Button Effect Type01 </a>
-        </li>
-
-        <li>
-            <a href="website_name_decoration.html"> Brand Title Demo</a>
-        </li>
-
-        <li>
-            <a href="bubble_effects.html"> Bubble Effect </a>
-        </li>
-
-        <li>
-            <a href="rotation.html"> Advance Menu [Frame Only] </a>
-        </li>
-
-        <li>
-            <a href="progress_round.html"> Circular Progress </a>
-        </li>
-
-        <li>
-            <a href="square_flip.html"> Progress Type 01 </a>
-        </li>
-
-        <li>
-            <a href="progress_circle.html"> Progress Type 02 </a>
-        </li>
-
-        <li>
-            <a href="forms.html"> Different Html Inputs</a>
-        </li>
-
-        <li>
-            <a href="login.html"> User Authentication  Demo 1 </a>
-        </li>
-
-        <li>
-            <a href="login_2.html"> User Authentication  Demo 2 </a>
-        </li>
-
-        <li>
-            <a href="brand_motivation.html"> Glass Morphism </a>
-        </li>
-
-        <li>
-            <a href="card_bg.html"> Gradient Card </a>
-        </li>
-
-        <li>
-            <a href="card_pure_glass.html"> Glass Card </a>
-        </li>
-
-        <li>
-            <a href="card.html"> Product Card </a>
-        </li>
-
-        <li>
-            <a href="count_animation_base.html"> Visitors Count </a>
-        </li>
-
-        <li>
-            <a href="train_animation.html"> Scroll items </a>
-        </li>
-
-        <li>
-            <a href="blast_wheel_svg_animation_01.html"> SVG Art/Shape Animation 1</a>
-        </li>
-
-
-        <li>
-            <a href="cube_svg_animation_02.html"> SVG Art/Shape Animation 2</a>
-        </li>
-
-        <li>
-            <a href="cube_svg_animation_03.html"> SVG Art/Shape Animation 3</a>
-        </li>
-
-    </ul>
+    <div class="header">
+        <h5> HTML and CSS only for Server Side Rendering [SSR] </h5>
+    </div>
+
+    <div class="content">
+        <div class="column">
+            <ul>
+                <li>
+                    <span class="tab">Religious & Hobby</span>
+                </li>
+
+                <li>
+                    <a href="content.html"> 99 Names of Allah</a>
+                </li>
+
+                <li>
+                    <a href="faith_testimony.html"> Testimony of Islam</a>
+                </li>
+
+                <li>
+                    <a href="neon_text.html"> Neon Word Animation</a>
+                </li>
+
+                <li>
+                    <a href="flying_button.html"> Button Effect Type01 </a>
+                </li>
+
+                <li>
+                    <a href="website_name_decoration.html"> Brand Title Demo</a>
+                </li>
+
+                <li>
+                    <a href="bubble_effects.html"> Bubble Effect </a>
+                </li>
+
+                <li>
+                    <a href="rotation.html"> Advance Menu [Frame Only] </a>
+                </li>
+
+                <li>
+                    <a href="progress_round.html"> Circular Progress </a>
+                </li>
+
+                <li>
+                    <a href="square_flip.html"> Progress Type 01 </a>
+                </li>
+
+                <li>
+                    <a href="progress_circle.html"> Progress Type 02 </a>
+                </li>
+
+                <li>
+                    <a href="forms.html"> Different Html Inputs</a>
+                </li>
+
+                <li>
+                    <a href="login.html"> User Authentication  Demo 1 </a>
+                </li>
+
+                <li>
+                    <a href="login_2.html"> User Authentication  Demo 2 </a>
+                </li>
+
+                <li>
+                    <a href="brand_motivation.html"> Glass Morphism </a>
+                </li>
+
+                <li>
+                    <a href="card_bg.html"> Gradient Card </a>
+                </li>
+
+                <li>
+                    <a href="card_pure_glass.html"> Glass Card </a>
+                </li>
+
+                <li>
+                    <a href="card.html"> Product Card </a>
+                </li>
+
+                <li>
+                    <a href="count_animation_base.html"> Visitors Count </a>
+                </li>
+
+                <li>
+                    <a href="train_animation.html"> Scroll items </a>
+                </li>
+
+                <li>
+                    <a href="blast_wheel_svg_animation_01.html"> SVG Art/Shape Animation 1</a>
+                </li>
+
+
+                <li>
+                    <a href="cube_svg_animation_02.html"> SVG Art/Shape Animation 2</a>
+                </li>
+
+                <li>
+                    <a href="cube_svg_animation_03.html"> SVG Art/Shape Animation 3</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="column">
+            <ul>
+                <li>
+                    <span class="tab">Layouts</span>
+                </li>
+
+                <li>
+                    <a href="content.html"> 99 Names of Allah</a>
+                </li>
+
+                <li>
+                    <a href="faith_testimony.html"> Testimony of Islam</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="column">
+            <ul>
+                <li>
+                    <span class="tab">Components</span>
+                </li>
+                <li>
+                    <a href="content.html"> 99 Names of Allah</a>
+                </li>
+
+                <li>
+                    <a href="faith_testimony.html"> Testimony of Islam</a>
+                </li>
+
+                <li>
+                    <a href="neon_text.html"> Neon Word Animation</a>
+                </li>
+
+                <li>
+                    <a href="flying_button.html"> Button Effect Type01 </a>
+                </li>
+
+                <li>
+                    <a href="website_name_decoration.html"> Brand Title Demo</a>
+                </li>
+
+                <li>
+                    <a href="bubble_effects.html"> Bubble Effect </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="column">
+            <ul>
+                <li>
+                    <span class="tab">Templates</span>
+                </li>
+
+                <li>
+                    <a href="content.html"> 99 Names of Allah</a>
+                </li>
+
+                <li>
+                    <a href="faith_testimony.html"> Testimony of Islam</a>
+                </li>
+
+                <li>
+                    <a href="neon_text.html"> Neon Word Animation</a>
+                </li>
+
+                <li>
+                    <a href="flying_button.html"> Button Effect Type01 </a>
+                </li>
+
+                <li>
+                    <a href="website_name_decoration.html"> Brand Title Demo</a>
+                </li>
+
+                <li>
+                    <a href="bubble_effects.html"> Bubble Effect </a>
+                </li>
+
+                <li>
+                    <a href="rotation.html"> Advance Menu [Frame Only] </a>
+                </li>
+
+                <li>
+                    <a href="progress_round.html"> Circular Progress </a>
+                </li>
+
+                <li>
+                    <a href="square_flip.html"> Progress Type 01 </a>
+                </li>
+
+                <li>
+                    <a href="progress_circle.html"> Progress Type 02 </a>
+                </li>
+
+                <li>
+                    <a href="forms.html"> Different Html Inputs</a>
+                </li>
+
+                <li>
+                    <a href="login.html"> User Authentication  Demo 1 </a>
+                </li>
+
+                <li>
+                    <a href="login_2.html"> User Authentication  Demo 2 </a>
+                </li>
+
+                <li>
+                    <a href="brand_motivation.html"> Glass Morphism </a>
+                </li>
+
+                <li>
+                    <a href="card_bg.html"> Gradient Card </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h5> Copyright Reserved by Team Olivight </h5>
+    </div>
 
 </div>
 
