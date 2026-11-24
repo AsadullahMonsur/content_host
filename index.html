@@ -1,302 +1,282 @@
-<!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org">
-<head>
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
     <meta
-          lang="en"
-          charset="UTF-8"
-          name="viewport"
-          content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"/>
+      lang="en"
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1,  minimum-scale=1,maximum-scale=3, user-scalable=yes"
+    />
 
-    <meta http-equiv="cache-control" content="max-age=0, no-cache, no-store, must-revalidate, private">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="0">
+    <meta
+      http-equiv="cache-control"
+      content="max-age=0, no-cache, no-store, must-revalidate, private"
+    />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
 
     <title>UI Hut</title>
 
     <style>
 
-/*in the Name of Allah*/
-html,body {
-    margin: 0;
-    padding: 0;
-}
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-/*auto indent clt+shit+i*/
-/*this is the root holder*/
-#view_layout {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: rgb(151, 151, 151);
-}
+      /*auto indent clt+shit+i*/
+      /*this is the root holder*/
+      #view_layout {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: rgb(151, 151, 151);
+      }
 
-.header{
-display:flex;
-flex-grow:1;
-  align-items: center;
-  justify-content: center;
-}
+      .header {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+      }
 
-.content{
-max-height:512px;
-display:flex;
-flex-direction:row;
-flex-grow:5;
-overflow: scroll;
-}
+      .content {
+        max-height: 512px;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 5;
+        overflow: scroll;
+      }
 
-.footer{
-display:flex;
-flex-grow:1;
-  align-items: center;
-  justify-content: center;
-}
+      .footer {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+      }
 
-.column{
-display:flex;
-flex-direction:row;
-flex-grow:1;
-}
+      .column {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+      }
 
-.column ul{
-min-width:312px;
-display: flex;
-flex-direction: column;
-overflow-x: hidden;
-overflow-y: scroll;
-}
+      .column ul {
+        min-width: 312px;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
 
-.column ul li:nth-child(1){
-min-height: 45px;
-display: flex;
-flex-direction: row;
-}
+      .column ul li:nth-child(1) {
+        min-height: 45px;
+        display: flex;
+        flex-direction: row;
+      }
 
-.column ul li:nth-child(n+2){
-min-height: 45px;
-padding-left: 15px;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: left;
-}
+      .column ul li:nth-child(n + 2) {
+        min-height: 45px;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+      }
 
-.column ul li:hover{
-background: rgba(12, 20, 87, 0.432);
-color: rgb(238, 238, 238);    
-}
+      .column ul li:hover {
+        background: rgba(12, 20, 87, 0.432);
+        color: rgb(238, 238, 238);
+      }
 
-.column ul li a{
-color: rgb(0, 0, 0);
-}
+      .column ul li a {
+        color: rgb(0, 0, 0);
+      }
 
-.column ul li a:hover{
-color: rgb(238, 238, 238);
-}
+      .column ul li a:hover {
+        color: rgb(238, 238, 238);
+      }
 
-.tab{
-min-height:40px;
-margin-left: 0;
-padding-left: 0;
-display:flex;
-flex-grow:1;
-background: green;
-color:white;
-align-items: center;
-justify-content: center;
-}
-@media screen and (min-height: 500px) {
-  #view_layout {
-    min-height: 100vh;
-  }
+      .tab {
+        min-height: 40px;
+        margin-left: 0;
+        padding-left: 0;
+        display: flex;
+        flex-grow: 1;
+        background: green;
+        color: white;
+        align-items: center;
+        justify-content: center;
+      }
+      @media screen and (min-height: 500px) {
+        #view_layout {
+          min-height: 100vh;
+        }
+      }
 
-}
+      @media screen and (min-height: 700px) {
+        #view_layout {
+          min-height: 100vh;
+        }
+      }
 
-@media screen and (min-height: 700px) {
-  #view_layout {
-    min-height: 100vh;
-  }
-}
+      @media screen and (min-height: 1024px) {
+        #view_layout {
+          min-height: 100vh;
+        }
+      }
 
-@media screen and (min-height: 1024px) {
-  #view_layout {
-    min-height: 100vh;
-  }
-}
+      @media screen and (min-height: 1280px) {
+        #view_layout {
+          min-height: 100vh;
+        }
+      }
 
-@media screen and (min-height: 1280px) {
-  #view_layout {
-    min-height: 100vh;
-  }
+      @media screen and (max-width: 500px) {
+        .content {
+          flex-direction: column;
+        }
+      }
 
-}
+      @media screen and (min-width: 500px) {
+      }
 
-@media screen and (max-width: 500px) {
-.content{
- flex-direction:column;
-}
-}
+      @media screen and (min-width: 700px) {
+      }
 
-@media screen and (min-width: 500px) {
+      @media screen and (min-width: 1024px) {
+      }
 
-}
-
-@media screen and (min-width: 700px) {
-
-}
-
-@media screen and (min-width: 1024px) {
-
-}
-
-@media screen and (min-width: 1280px) {
-
-}
+      @media screen and (min-width: 1280px) {
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="view_layout">
+      <div class="header">
+        <h5>HTML and CSS only for Server Side Rendering [SSR]</h5>
+      </div>
 
-<div id="view_layout">
+      <div class="content">
+        <div class="column">
+          <ul>
+            <li>
+              <span class="tab">Layouts</span>
+            </li>
 
-    <div class="header">
-        <h5> HTML and CSS only for Server Side Rendering [SSR] </h5>
+            <li>
+              <a href="design01.html"> Skeleton 1 </a>
+            </li>
+
+            <li>
+              <a href="login.html"> User Authentication Demo 1 </a>
+            </li>
+
+            <li>
+              <a href="login_2.html"> User Authentication Demo 2 </a>
+            </li>
+
+            <li>
+              <a href="count_animation_base.html"> Visitors Count </a>
+            </li>
+
+            <li>
+              <a href="bubble_effects.html"> Bubble Effect </a>
+            </li>
+
+            <li>
+              <a href="train_animation.html"> Scroll items </a>
+            </li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li>
+              <span class="tab">Components</span>
+            </li>
+
+            <li>
+              <a href="forms.html"> Different Html Inputs</a>
+            </li>
+
+            <li>
+              <a href="card_bg.html"> Gradient Card </a>
+            </li>
+
+            <li>
+              <a href="card_pure_glass.html"> Glass Card </a>
+            </li>
+
+            <li>
+              <a href="card.html"> Product Card </a>
+            </li>
+
+            <li>
+              <a href="neon_text.html"> Neon Word Animation</a>
+            </li>
+
+            <li>
+              <a href="flying_button.html"> Button Effect Type01 </a>
+            </li>
+
+            <li>
+              <a href="rotation.html"> Advance Menu [Frame Only] </a>
+            </li>
+
+            <li>
+              <a href="square_flip.html"> Progress Type 01 </a>
+            </li>
+
+            <li>
+              <a href="progress_circle.html"> Progress Type 02 </a>
+            </li>
+
+            <li>
+              <a href="progress_round.html"> Circular Progress </a>
+            </li>
+
+            <li>
+              <a href="brand_motivation.html"> Glass Morphism </a>
+            </li>
+
+            <li>
+              <a href="website_name_decoration.html"> Brand Title Demo</a>
+            </li>
+
+            <li>
+              <a href="blast_wheel_svg_animation_01.html">
+                SVG Art/Shape Animation 1</a
+              >
+            </li>
+
+            <li>
+              <a href="cube_svg_animation_03.html">
+                SVG Art/Shape Animation 2</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="column">
+          <ul>
+            <li>
+              <span class="tab">Templates</span>
+            </li>
+
+            <li>
+              <a href="html_email_template01.html"> Email Template 1 </a>
+            </li>
+
+            <li>
+              <a href="html_email_template02.html"> Email Template 2 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <h5>Copyright Reserved by Quibe</h5>
+      </div>
     </div>
-
-    <div class="content">
-        <div class="column">
-            <ul>
-                <li>
-                    <span class="tab">Religion & Hobby</span>
-                </li>
-
-                <li>
-                    <a href="content.html"> 99 Names of Allah</a>
-                </li>
-
-                <li>
-                    <a href="faith_testimony.html"> Testimony of Islam</a>
-                </li>
-
-            </ul>
-        </div>
-        <div class="column">
-            <ul>
-                <li>
-                    <span class="tab">Layouts</span>
-                </li>
-
-                <li>
-                    <a href="design01.html"> Skeleton 1 </a>
-                </li>
-
-                <li>
-                    <a href="login.html"> User Authentication  Demo 1 </a>
-                </li>
-
-                <li>
-                    <a href="login_2.html"> User Authentication  Demo 2 </a>
-                </li>
-
-                <li>
-                    <a href="count_animation_base.html"> Visitors Count </a>
-                </li>
-
-                <li>
-                    <a href="bubble_effects.html"> Bubble Effect </a>
-                </li>
-
-                <li>
-                    <a href="train_animation.html"> Scroll items </a>
-                </li>
-
-            </ul>
-        </div>
-        <div class="column">
-            <ul>
-                <li>
-                    <span class="tab">Components</span>
-                </li>
-
-                <li>
-                    <a href="forms.html"> Different Html Inputs</a>
-                </li>
-
-                <li>
-                    <a href="card_bg.html"> Gradient Card </a>
-                </li>
-
-                <li>
-                    <a href="card_pure_glass.html"> Glass Card </a>
-                </li>
-
-                <li>
-                    <a href="card.html"> Product Card </a>
-                </li>
-
-                <li>
-                    <a href="neon_text.html"> Neon Word Animation</a>
-                </li>
-
-                <li>
-                    <a href="flying_button.html"> Button Effect Type01 </a>
-                </li>
-
-                <li>
-                    <a href="rotation.html"> Advance Menu [Frame Only] </a>
-                </li>
-
-                <li>
-                    <a href="square_flip.html"> Progress Type 01 </a>
-                </li>
-
-                <li>
-                    <a href="progress_circle.html"> Progress Type 02 </a>
-                </li>
-
-                <li>
-                    <a href="progress_round.html"> Circular Progress </a>
-                </li>
-
-                <li>
-                    <a href="brand_motivation.html"> Glass Morphism </a>
-                </li>
-
-                <li>
-                    <a href="website_name_decoration.html"> Brand Title Demo</a>
-                </li>
-
-                <li>
-                    <a href="blast_wheel_svg_animation_01.html"> SVG Art/Shape Animation 1</a>
-                </li>
-
-                <li>
-                    <a href="cube_svg_animation_03.html"> SVG Art/Shape Animation 2</a>
-                </li>
-            </ul>
-        </div>
-        <div class="column">
-            <ul>
-                <li>
-                    <span class="tab">Templates</span>
-                </li>
-
-                <li>
-                    <a href="html_email_template01.html"> Email Template 1 </a>
-                </li>
-
-                <li>
-                    <a href="html_email_template02.html"> Email Template 2 </a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer">
-        <h5> Copyright Reserved by Quibe </h5>
-    </div>
-
-</div>
-
-</body>
+  </body>
 </html>
